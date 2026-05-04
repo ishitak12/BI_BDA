@@ -1,0 +1,111 @@
+→ Bar Chart    : Day vs Average Tip
+→ Pie Chart    : Male vs Female customers
+→ Line Chart   : Total Bill vs trend
+→ Scatter Plot : Total Bill vs Tip
+→ Card Visual  : Total Revenue, Total Tips
+
+For the tips dataset, it's already very clean! But here's what to check in Power Query Editor:
+
+Step 1 — Open Transform Data
+After loading tips.csv
+→ Click "Transform Data"
+→ Power Query Editor opens
+
+Step 2 — Check Data Types
+Make sure each column has correct type:
+ColumnCorrect TypeHow to Settotal_billDecimal NumberClick column → Data Type → DecimaltipDecimal NumberClick column → Data Type → DecimalsexTextAlready correct ✅smokerTextAlready correct ✅dayTextAlready correct ✅timeTextAlready correct ✅sizeWhole NumberClick column → Data Type → Whole Number
+
+Step 3 — Check Missing Values
+→ Each column header shows a quality bar
+→ Green = Valid data
+→ Red   = Errors
+→ White = Empty/Null
+
+Tips dataset has NO missing values 
+Just verify the bar is fully GREEN
+
+Step 4 — Remove Duplicates (Optional)
+→ Select All Columns (Ctrl + A)
+→ Right Click → Remove Duplicates
+→ Tips dataset has no duplicates 
+
+Step 5 — Add Custom Column (Tip Percentage)
+→ Click "Add Column" tab
+→ Click "Custom Column"
+→ Name : Tip_Percentage
+→ Formula :
+
+= [tip] / [total_bill] * 100
+
+→ Click OK
+→ Change data type to Decimal Number
+
+Step 6 — Rename Columns (Optional but Clean)
+Double click each column to rename:
+
+total_bill → Total_Bill
+tip        → Tip
+sex        → Gender
+smoker     → Smoker
+day        → Day
+time       → Time
+size       → Party_Size
+
+Step 7 — Close & Apply
+→ Click "Close & Apply" (top left)
+→ Data is now clean & ready for visuals!
+
+Summary — Tips Dataset Cleaning Checklist
+Data Types correct
+No Missing Values
+No Duplicates
+Added Tip_Percentage column
+Renamed columns (optional)
+Close & Apply
+
+Build Visuals (Dashboard)
+Once loaded, build these charts:
+1. Bar Chart — Average Tip by Day
+Visualization : Bar Chart
+X-Axis        : day
+Y-Axis        : Average of tip
+2. Pie Chart — Male vs Female Customers
+Visualization : Pie Chart
+Legend        : sex
+Values        : Count of sex
+3. Scatter Plot — Total Bill vs Tip
+Visualization : Scatter Chart
+X-Axis        : total_bill
+Y-Axis        : tip
+Legend        : sex
+4. Card Visuals — KPI Summary
+Card 1 : Sum of total_bill   → "Total Revenue"
+Card 2 : Sum of tip          → "Total Tips"
+Card 3 : Count of total_bill → "Total Customers"
+5. Slicer — Filters
+Slicer 1 : day    (filter by day)
+Slicer 2 : sex    (filter by gender)
+Slicer 3 : smoker (filter by smoker)
+
+Step 6 — Add Tip Percentage Column
+Go to → Table View
+→ Click "New Column"
+→ Type this formula:
+
+Tip_Percentage = DIVIDE(tips[tip], tips[total_bill]) * 100
+
+Step 7 — Final Dashboard Layout
+┌─────────────────────────────────────────────────┐
+│   🍽️  Restaurant Tips Analysis Dashboard        │
+├──────────────┬──────────────┬───────────────────┤
+│ Total Revenue│  Total Tips  │ Total Customers   │
+│  $4,827.77   │   $731.58    │      244          │
+├──────────────┴──────────────┴───────────────────┤
+│  [Slicer: Day]  [Slicer: Gender] [Slicer:Smoker]│
+├─────────────────────┬───────────────────────────┤
+│  Bar Chart          │   Pie Chart               │
+│  Avg Tip by Day     │   Male vs Female          │
+├─────────────────────┴───────────────────────────┤
+│         Scatter Plot                            │
+│         Total Bill vs Tip                       │
+└─────────────────────────────────────────────────┘
