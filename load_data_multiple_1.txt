@@ -1,0 +1,78 @@
+1. Sales Trend (MOST IMPORTANT)
+ Line Chart
+Axis → OrderDate - X
+Values → Total - Y
+
+ Shows:
+Growth/decline in sales over time
+
+ 2. Monthly Sales
+ Column Chart
+Axis → Month
+Values → Total
+
+ Insight:
+Which month performs best
+
+ 3. Sales by Salesperson
+ Bar Chart
+Axis → Salesperson
+Values → Total
+
+ Insight:
+ Top performer
+
+ 4. Sales by Manager
+ Bar Chart
+Axis → Manager
+Values → Total
+
+ Insight:
+ Manager-level performance
+
+ 5. Channel Distribution
+Pie Chart
+Legend → Channel
+Values → Total
+
+ Insight:
+Retail vs others
+
+ 6. Quantity vs Revenue
+ Scatter / Bar
+Quantity vs Total
+
+Insight:
+Sales volume vs revenue
+
+KPI Cards
+
+Create cards for:
+
+Total Sales → SUM(Total)
+Total Orders → COUNT(OrderNumber)
+Total Quantity → SUM(Quantity)
+Ideal Dashboard (what teacher LOVES)
+
+Include:
+
+Line chart (trend)
+Bar chart (salesperson)
+Pie chart (channel)
+KPI cards
+ Common Mistakes (avoid)
+ Using Month instead of OrderDate for trend
+ Not changing datatype
+ Random charts without meaning
+Not cleaning data
+ What to say in viva
+
+If asked:
+
+ “What did you do?”
+
+Say:
+
+I imported the dataset, performed data cleaning by correcting data types and handling missing values, and created visualizations such as sales trend, salesperson performance, and channel distribution to analyze business performance.
+
+multiple dataset 0data - http://services.odata.org/V3/Northwind/Northwind.svc/
